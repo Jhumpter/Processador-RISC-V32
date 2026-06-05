@@ -1,0 +1,60 @@
+module controle(
+input logic [6:0] opcode,
+output logic Branch,
+output logic MemRead,
+output logic MemtoReg,
+output logic [1:0] ALUOp,
+output logic MemWrite,
+output logic ALUSrc,
+output logic RegWrite,
+)
+/*
+1-Dá branch?
+2-Lê da memória?
+3-Guarda da memória no registrador?
+4,5-Operação da ULA
+	- Somar para load e store (00)
+	- Subtrair e comparar com zero (01)
+	- Determinado pelos funct 3 e 7 (10)
+6-Escreve na memória?
+7-Fonte de dados da ULA (0 pra registrador, 1 para imediato)
+8-Escreve no Registrador?
+*/
+
+//Tipo R = 0110011 -> 00010001
+//lw, lhu = 0000011 -> 01100011
+//addi, slti, andi, ori, xori = 0010011 -> 00010011
+//jalr = 1100111 -> 
+//sw = 0100011 -> 
+//lui = 0110111 -> 
+//auipc = 0010111 -> 
+//jal = 1101111 -> 
+//beq, bne = 1100011 -> 
+
+always_comb begin
+	case(opcode)
+		5'b0110011: begin //Tipo R
+			Branch = 0;
+			MemRead = 0;
+			MemtoReg = 0;
+			ALUOp = 10;
+			MemWrite = 0;
+			ALUSrc = 0;
+			RegWrite = 1;
+		end
+		5'b0000011: begin //lw, lhu
+			Branch = 0;
+			MemRead = 1;
+			MemtoReg = 1;
+			ALUOp = 00;
+			MemWrite = 0;
+			ALUSrc = 1;
+			RegWrite = 1;
+		end
+		default: begin
+            dado_saida1 = 32'b0;
+	  end
+  endcase
+end
+
+endmodule
