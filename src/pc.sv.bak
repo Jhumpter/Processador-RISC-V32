@@ -1,0 +1,15 @@
+module pc (
+input logic clk,
+input logic [31:0] prox_pc,
+output logic [31:0] pc_atual
+);
+
+logic [31:0] pc = 32'0;
+
+pc_atual <= pc;
+always_ff @(posedge clk) begin
+pc <= prox_pc
+end
+
+end module
+
