@@ -258,33 +258,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 560 296)
-	(pt 560 312)
-	(bus)
-)
-(connector
-	(text "instruction_input[24..20]" (rect 570 280 688 292)(font "Arial" ))
-	(pt 560 296)
-	(pt 744 296)
-	(bus)
-)
-(connector
-	(text "instruction_input[11..7]" (rect 570 296 682 308)(font "Arial" ))
-	(pt 560 312)
-	(pt 744 312)
-	(bus)
-)
-(connector
-	(pt 464 376)
-	(pt 560 376)
-	(bus)
-)
-(connector
-	(pt 560 312)
-	(pt 560 376)
-	(bus)
-)
-(connector
 	(pt 456 264)
 	(pt 744 264)
 )
@@ -336,21 +309,6 @@ applicable agreement for further details.
 (connector
 	(pt 744 248)
 	(pt 736 248)
-)
-(connector
-	(pt 560 376)
-	(pt 560 488)
-	(bus)
-)
-(connector
-	(pt 560 488)
-	(pt 728 488)
-	(bus)
-)
-(connector
-	(pt 560 280)
-	(pt 560 296)
-	(bus)
 )
 (connector
 	(pt 736 248)
@@ -405,17 +363,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 336 280)
-	(pt 560 280)
-	(bus)
-)
-(connector
-	(text "instruction_input[19..15]" (rect 570 264 688 276)(font "Arial" ))
-	(pt 560 280)
-	(pt 744 280)
-	(bus)
-)
-(connector
 	(pt -208 240)
 	(pt -48 240)
 )
@@ -434,6 +381,17 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "instruction_input[11..7]" (rect 570 296 682 308)(font "Arial" ))
+	(pt 744 312)
+	(pt 560 312)
+	(bus)
+)
+(connector
+	(pt 464 376)
+	(pt 560 376)
+	(bus)
+)
+(connector
 	(pt 336 160)
 	(pt 536 160)
 	(bus)
@@ -441,6 +399,49 @@ applicable agreement for further details.
 (connector
 	(pt 336 280)
 	(pt 336 160)
+	(bus)
+)
+(connector
+	(pt 336 280)
+	(pt 560 280)
+	(bus)
+)
+(connector
+	(text "instruction_input[19..15]" (rect 570 264 688 276)(font "Arial" ))
+	(pt 560 280)
+	(pt 744 280)
+	(bus)
+)
+(connector
+	(pt 560 312)
+	(pt 560 376)
+	(bus)
+)
+(connector
+	(pt 560 376)
+	(pt 560 488)
+	(bus)
+)
+(connector
+	(text "instruction_input[24..20]" (rect 570 280 688 292)(font "Arial" ))
+	(pt 744 296)
+	(pt 560 296)
+	(bus)
+)
+(connector
+	(pt 560 280)
+	(pt 560 296)
+	(bus)
+)
+(connector
+	(pt 560 296)
+	(pt 560 312)
+	(bus)
+)
+(connector
+	(text "instruction_input[31..0]" (rect 570 472 682 484)(font "Arial" ))
+	(pt 560 488)
+	(pt 728 488)
 	(bus)
 )
 (junction (pt 560 376))

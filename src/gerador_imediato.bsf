@@ -18,35 +18,19 @@ programming logic devices manufactured by Altera and sold by
 Altera or its authorized distributors.  Please refer to the 
 applicable agreement for further details.
 */
-(header "graphic" (version "1.4"))
-(pin
-	(output)
-	(rect 432 72 608 88)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "imediato[31..0]" (rect 90 0 163 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-)
+(header "symbol" (version "1.1"))
 (symbol
-	(rect 272 48 432 128)
-	(text "gerador_imediato" (rect 5 0 88 12)(font "Arial" ))
-	(text "inst" (rect 8 64 25 76)(font "Arial" ))
+	(rect 16 16 176 96)
+	(text "gerador_imediato" (rect 5 0 73 12)(font "Arial" ))
+	(text "inst" (rect 8 64 20 76)(font "Arial" ))
 	(port
 		(pt 160 32)
 		(output)
-		(text "imediato[31..0]" (rect 0 0 73 12)(font "Arial" ))
-		(text "imediato[31..0]" (rect 78 27 139 39)(font "Arial" ))
+		(text "imediato[31..0]" (rect 0 0 55 12)(font "Arial" ))
+		(text "imediato[31..0]" (rect 84 27 139 39)(font "Arial" ))
 		(line (pt 160 32)(pt 144 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 144 64))
+		(rectangle (rect 16 16 144 64)(line_width 1))
 	)
 )

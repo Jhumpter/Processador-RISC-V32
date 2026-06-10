@@ -1,0 +1,17 @@
+module gerador_imediato(
+input logic [31:0] instruction
+output logic [31:0] imediato);
+
+always_comb begin
+	case (instruction[6:0])
+		//Tipo I
+		7'b0000011,7'b0010011,7'b1100111: begin
+			imediato = 32'b0 + [31:20] instruction
+		end
+		default: begin
+			imediato = 32'b0
+		end
+	endcase
+end
+
+endmodule
