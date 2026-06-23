@@ -5,7 +5,8 @@ output logic [1:0] RdSrc,
 output logic [1:0] ALUOp,
 output logic MemWrite,
 output logic ALUSrc,
-output logic RegWrite
+output logic RegWrite,
+output logic [1:0] LenMem
 );
 /*
 1- Lê da memória?
@@ -24,6 +25,10 @@ output logic RegWrite
 	0: rs2
 	1: imm
 8 -Escreve no registrador?
+9,10 -Tamanho da memória
+	01: Byte
+	10: Half-Word
+	11: Word
 */
 
 //Tipo R = 0110011 -> 
@@ -45,6 +50,7 @@ always_comb begin
 			MemWrite = 0;
 			ALUSrc = 0;
 			RegWrite = 0;
+			LenMem = 00;
 	  end
   endcase
 end
