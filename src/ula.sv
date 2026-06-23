@@ -18,6 +18,10 @@ always_comb begin
 			resultado = entrada_1 - entrada_2;
 		4'b0111:
 			resultado = (entrada_1 < entrada_2? 32'b1 : 32'b0);
+		4'b1100:
+			resultado = entrada_1 << entrada_2;
+		4'b0011:
+			resultado = entrada_1 >> entrada_2;
 		default:
 			resultado = 32'b0;
 	endcase

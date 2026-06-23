@@ -17,24 +17,28 @@ always_comb begin
 					controle_ula = 4'b0110;
 				7'b0000000:begin
 					case (funct3)
-						3'b000:
+						3'b000://add
 							controle_ula = 4'b0010;
-						3'b111:
+						3'b111://and
 							controle_ula = 4'b0000;
-						3'b110:
+						3'b110://or
 							controle_ula = 4'b0001;
-						3'b010:
+						3'b010://slt
 							controle_ula = 4'b0111;
+						3'b001://sll
+							controle_ula = 4'b1100;
+						3'b101://srl
+							controle_ula = 4'b0011;
 						default:
-							controle_ula = 4'b0000;
+							controle_ula = 4'b1111;
 					endcase
 				end
 				default:
-					controle_ula = 4'b0000;
+					controle_ula = 4'b1111;
 			endcase
 		end
 		default:
-			controle_ula = 4'b0000;
+			controle_ula = 4'b1111;
 	endcase
 end
 
