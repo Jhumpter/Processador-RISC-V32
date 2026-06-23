@@ -7,11 +7,13 @@ output logic [3:0] controle_ula
 
 always_comb begin
 	case(alu_op)
-		2'b00:
+		2'b00://sw, lw
 			controle_ula = 4'b0010;
-		2'b01:
+		2'b01://beq
 			controle_ula = 4'b0110;
-		2'b10:begin
+		2'b11://lui
+			controle_ula = 4'b1110;
+		2'b10:begin//tipo R
 			case(funct7)
 				7'b0100000:
 					controle_ula = 4'b0110;
