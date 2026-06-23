@@ -1,6 +1,8 @@
 module controle(
 input logic [6:0] opcode,
-output logic Branch,
+output logic BranchIgual,
+output logic BranchDiferente,
+output logic BranchIncondicional,
 output logic MemRead,
 output logic MemtoReg,
 output logic [1:0] ALUOp,
@@ -34,7 +36,9 @@ output logic RegWrite
 always_comb begin
 	case(opcode)
 		5'b0110011: begin //Tipo R
-			Branch = 0;
+			BranchIgual = 0;
+			BranchDiferente = 0;
+			BranchIncondicional = 0;
 			MemRead = 0;
 			MemtoReg = 0;
 			ALUOp = 10;
@@ -43,7 +47,9 @@ always_comb begin
 			RegWrite = 1;
 		end
 		5'b0000011: begin //lw, lhu
-			Branch = 0;
+			BranchIgual = 0;
+			BranchDiferente = 0;
+			BranchIncondicional = 0;
 			MemRead = 1;
 			MemtoReg = 1;
 			ALUOp = 00;
@@ -52,7 +58,9 @@ always_comb begin
 			RegWrite = 1;
 		end
 		default: begin
-         Branch = 0;
+         BranchIgual = 0;
+			BranchDiferente = 0;
+			BranchIncondicional = 0;
 			MemRead = 0;
 			MemtoReg = 0;
 			ALUOp = 00;
