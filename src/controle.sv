@@ -17,7 +17,7 @@ output logic RegWrite
 4,5 -Operação da ULA
 		00: sw, lw
 		01: beq, bne
-		11: lhu
+		11: lui
 		10: tipo R
 6 -Escreve na memória?
 7 -Fonte da ULA
@@ -27,18 +27,89 @@ output logic RegWrite
 */
 
 //Tipo R = 0110011 -> 00010001
-//lw = 0000011 -> 
-//lhu = 0000011 -> 
-//addi, slti, andi, ori, xori = 0010011 -> 
-//jalr = 1100111 -> 
-//sw = 0100011 -> 
-//lui = 0110111 -> 
-//auipc = 0010111 -> 
-//jal = 1101111 -> 
-//beq, bne = 1100011 -> 
+//lw, lhu = 0000011 -> 10100011
+//addi, slti, andi, ori, xori = 0010011 -> 00010011
+//jalr = 1100111 -> 010XX0X1
+//sw = 0100011 -> 0XX00110
+//lui = 0110111 -> 00011011
+//auipc = 0010111 -> 011XX0X1
+//jal = 1101111 -> 010XX0X1
+//beq, bne = 1100011 -> 0XX01000
 
 always_comb begin
 	case(opcode)
+		7'b0110011:begin//tipo r 00010001
+			MemRead = 0;
+			RdSrc = 00;
+			ALUOp = 10;
+			MemWrite = 0;
+			ALUSrc = 0;
+			RegWrite = 1;
+		end
+		7'b0000011:begin//lw,lhu 10100011
+			MemRead = 1;
+			RdSrc = 01;
+			ALUOp = 00;
+			MemWrite = 0;
+			ALUSrc = 1;
+			RegWrite = 1;
+		end
+		7'b0010011:begin//addi,slti,andi,ori,xori 00010011
+			MemRead = 0;
+			RdSrc = 00;
+			ALUOp = 10;
+			MemWrite = 0;
+			ALUSrc = 1;
+			RegWrite = 1;
+		end
+		7'b1100111:begin//jalr 010XX0X1
+			MemRead = 0;
+			RdSrc = 10;
+			ALUOp = 00;//XX
+			MemWrite = 0;
+			ALUSrc = 0;//X
+			RegWrite = 1;
+		end
+		7'b0100011:begin//sw 0XX00110
+			MemRead = 0;
+			RdSrc = 00;//XX
+			ALUOp = 00;
+			MemWrite = 1;
+			ALUSrc = 1;
+			RegWrite = 0;
+		end
+		7'b0110111:begin//lui 00011011
+			MemRead = 0;
+			RdSrc = 00;
+			ALUOp = 11;
+			MemWrite = 0;
+			ALUSrc = 1;
+			RegWrite = 1;
+		end
+		7'b0010111:begin//auipc 011XX0X1
+			MemRead = 0;
+			RdSrc = 11;
+			ALUOp = 00;//XX
+			MemWrite = 0;
+			ALUSrc = 0;//X
+			RegWrite = 1;
+		end
+		7'b1101111:begin//jal 010XX0X1
+			MemRead = 0;
+			RdSrc = 10;
+			ALUOp = 00;//XX
+			MemWrite = 0;
+			ALUSrc = 0;//X
+			RegWrite = 1;
+		end
+		7'b1100011:begin//beq, bne 0XX01000
+			MemRead = 0;
+			RdSrc = 00;//XX
+			ALUOp = 01;
+			MemWrite = 0;
+			ALUSrc = 0;
+			RegWrite = 0;
+		end
 		default: begin
 			MemRead = 0;
 			RdSrc = 00;

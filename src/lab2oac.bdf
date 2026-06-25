@@ -51,6 +51,38 @@ applicable agreement for further details.
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
 )
+(pin
+	(output)
+	(rect 1080 576 1256 592)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "imediato[31..0]" (rect 90 0 163 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 720 400 896 416)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "rd[31..0]" (rect 90 0 131 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
 (symbol
 	(rect 344 -144 376 -112)
 	(text "GND" (rect 16 8 26 29)(font "Arial" (font_size 6))(vertical))
@@ -544,6 +576,28 @@ applicable agreement for further details.
 	(rotate180)
 )
 (symbol
+	(rect 776 -192 976 -112)
+	(text "tamanho_mem" (rect 5 0 78 12)(font "Arial" ))
+	(text "inst1" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "funct3[2..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "funct3[2..0]" (rect 21 27 78 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "tamanho[1..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "tamanho[1..0]" (rect 122 27 190 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 184 64))
+	)
+)
+(symbol
 	(rect 736 40 936 184)
 	(text "controle" (rect 5 0 43 12)(font "Arial" ))
 	(text "inst8" (rect 8 128 31 140)(font "Arial" ))
@@ -598,28 +652,6 @@ applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 184 128))
-	)
-)
-(symbol
-	(rect 760 -192 960 -112)
-	(text "tamanho_mem" (rect 5 0 78 12)(font "Arial" ))
-	(text "inst1" (rect 8 64 31 76)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "funct3[2..0]" (rect 0 0 57 12)(font "Arial" ))
-		(text "funct3[2..0]" (rect 21 27 78 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 200 32)
-		(output)
-		(text "tamanho[1..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "tamanho[1..0]" (rect 122 27 179 39)(font "Arial" ))
-		(line (pt 200 32)(pt 184 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 184 64))
 	)
 )
 (connector
@@ -1067,11 +1099,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 720 360)
-	(pt 720 448)
-	(bus)
-)
-(connector
 	(pt 720 448)
 	(pt 1104 448)
 	(bus)
@@ -1137,16 +1164,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1080 328)
-	(pt 1080 488)
-	(bus)
-)
-(connector
-	(pt 1080 488)
-	(pt 1080 624)
-	(bus)
-)
-(connector
 	(pt 1832 576)
 	(pt 1936 576)
 	(bus)
@@ -1208,11 +1225,6 @@ applicable agreement for further details.
 	(pt 936 152)
 )
 (connector
-	(pt 560 -232)
-	(pt 560 72)
-	(bus)
-)
-(connector
 	(pt 560 72)
 	(pt 560 312)
 	(bus)
@@ -1224,24 +1236,50 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 760 -160)
-	(pt 720 -160)
+	(pt 1080 328)
+	(pt 1080 488)
 	(bus)
 )
 (connector
-	(pt 720 -160)
-	(pt 720 -232)
+	(pt 1080 488)
+	(pt 1080 584)
+	(bus)
+)
+(connector
+	(pt 1080 584)
+	(pt 1080 624)
+	(bus)
+)
+(connector
+	(pt 720 360)
+	(pt 720 408)
+	(bus)
+)
+(connector
+	(pt 720 408)
+	(pt 720 448)
+	(bus)
+)
+(connector
+	(pt 560 -232)
+	(pt 560 -160)
+	(bus)
+)
+(connector
+	(pt 560 -160)
+	(pt 560 72)
 	(bus)
 )
 (connector
 	(text "instruction_input[14..12]" (rect 570 -248 688 -236)(font "Arial" ))
+	(pt 560 -232)
 	(pt 1088 -232)
-	(pt 720 -232)
 	(bus)
 )
 (connector
-	(pt 720 -232)
-	(pt 560 -232)
+	(text "instruction_input[14..12]" (rect 570 -176 688 -164)(font "Arial" ))
+	(pt 560 -160)
+	(pt 776 -160)
 	(bus)
 )
 (junction (pt 560 376))
@@ -1261,4 +1299,6 @@ applicable agreement for further details.
 (junction (pt 1016 -200))
 (junction (pt 1056 144))
 (junction (pt 1080 488))
-(junction (pt 720 -232))
+(junction (pt 1080 584))
+(junction (pt 720 408))
+(junction (pt 560 -160))
