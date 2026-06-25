@@ -23,7 +23,7 @@ always_comb begin
 		4'b0011:
 			resultado = entrada_1 >> entrada_2;
 		4'b1110:
-			resultado = entrada_2 << 12;
+			resultado = entrada_2;
 		default:
 			resultado = 32'b0;
 	endcase

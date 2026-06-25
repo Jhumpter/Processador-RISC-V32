@@ -11,8 +11,8 @@ output logic [31:0] dado_saida2
 
 logic [31:0] x0;
 assign x0 = 32'b0;
-logic [31:0] x1 = 32'b1;
-logic [31:0] x2 = 32'b1;
+logic [31:0] x1;
+logic [31:0] x2;
 logic [31:0] x3;
 logic [31:0] x4;
 logic [31:0] x5;
