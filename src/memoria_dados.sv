@@ -7,8 +7,8 @@ input logic [31:0] adress,
 input logic [31:0] entrada,
 output logic [31:0] saida
 );
-(* ram_init_file = "dia1nivel1_data.mif" *)
-logic [31:0] memoria [0:3276];
+(* ram_init_file = "dia1nivel2_data.mif" *)
+logic [31:0] memoria [0:128];
 //Escrevendo na memoria de dados (se MemWrite for 1)
 always_ff @(posedge clk) begin
 	if (MemWrite == 1'b1)begin
