@@ -13,30 +13,28 @@ always_comb begin
 			controle_ula = 4'b0110;
 		2'b11://lui
 			controle_ula = 4'b1110;
-		2'b10:begin//tipo R
+		2'b10:begin//tipo R/addi, slti, andi, ori, xori
 			case(funct7)
 				7'b0100000:
 					controle_ula = 4'b0110;
-				7'b0000000:begin
+				default:begin
 					case (funct3)
-						3'b000://add
+						3'b000://add/addi
 							controle_ula = 4'b0010;
-						3'b111://and
+						3'b111://and/andi
 							controle_ula = 4'b0000;
-						3'b110://or
+						3'b110://or/ori
 							controle_ula = 4'b0001;
-						3'b010://slt
+						3'b010://slt/slti
 							controle_ula = 4'b0111;
-						3'b001://sll
+						3'b001://sll/slli
 							controle_ula = 4'b1100;
-						3'b101://srl
+						3'b101://srl/srli
 							controle_ula = 4'b0011;
 						default:
 							controle_ula = 4'b1111;
 					endcase
 				end
-				default:
-					controle_ula = 4'b1111;
 			endcase
 		end
 		default:

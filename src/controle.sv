@@ -18,7 +18,7 @@ output logic RegWrite
 		00: sw, lw
 		01: beq, bne
 		11: lui
-		10: tipo R
+		10: tipo R/addi, slti, andi, ori, xori
 6 -Escreve na memória?
 7 -Fonte da ULA
 	0: rs2
