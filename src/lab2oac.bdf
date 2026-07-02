@@ -147,6 +147,22 @@ applicable agreement for further details.
 		(line (pt 78 12)(pt 82 8))
 	)
 )
+(pin
+	(output)
+	(rect 208 72 384 88)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "pc[31..0]" (rect 90 0 133 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
 (symbol
 	(rect 344 -144 376 -112)
 	(text "GND" (rect 16 8 26 29)(font "Arial" (font_size 6))(vertical))
@@ -226,35 +242,6 @@ applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 184 64))
-	)
-)
-(symbol
-	(rect -16 -32 200 48)
-	(text "pc" (rect 5 0 16 12)(font "Arial" ))
-	(text "program_counter" (rect 8 64 90 76)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "prox_pc[31..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "prox_pc[31..0]" (rect 21 43 91 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 216 32)
-		(output)
-		(text "pc_atual[31..0]" (rect 0 0 73 12)(font "Arial" ))
-		(text "pc_atual[31..0]" (rect 134 27 195 39)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 200 64))
 	)
 )
 (symbol
@@ -795,6 +782,35 @@ applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 184 128))
+	)
+)
+(symbol
+	(rect -16 -32 200 48)
+	(text "pc" (rect 5 0 16 12)(font "Arial" ))
+	(text "program_counter" (rect 8 64 90 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "prox_pc[31..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "prox_pc[31..0]" (rect 21 43 91 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "pc_atual[31..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "pc_atual[31..0]" (rect 134 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 64))
 	)
 )
 (connector
@@ -1629,16 +1645,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 208 0)
-	(pt 208 376)
-	(bus)
-)
-(connector
-	(pt 208 376)
-	(pt 208 840)
-	(bus)
-)
-(connector
 	(pt 208 840)
 	(pt 1840 840)
 	(bus)
@@ -1666,6 +1672,21 @@ applicable agreement for further details.
 (connector
 	(pt 720 408)
 	(pt 720 448)
+	(bus)
+)
+(connector
+	(pt 208 0)
+	(pt 208 80)
+	(bus)
+)
+(connector
+	(pt 208 80)
+	(pt 208 376)
+	(bus)
+)
+(connector
+	(pt 208 376)
+	(pt 208 840)
 	(bus)
 )
 (junction (pt 560 376))
@@ -1697,3 +1718,4 @@ applicable agreement for further details.
 (junction (pt 1568 160))
 (junction (pt 656 280))
 (junction (pt 208 376))
+(junction (pt 208 80))

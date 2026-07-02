@@ -4,7 +4,7 @@ input logic [31:0] prox_pc,
 output logic [31:0] pc_atual
 );
 
-logic [31:0] pc = 32'b0;
+logic [31:0] pc = 32'h00400000;
 
 always_comb begin
 pc_atual = pc;
