@@ -663,28 +663,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 744 456 960 536)
-	(text "gerador_imediato" (rect 5 0 88 12)(font "Arial" ))
-	(text "gerador_imediato" (rect 8 64 91 76)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "instruction[31..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "instruction[31..0]" (rect 21 27 103 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 216 32)
-		(output)
-		(text "imediato[31..0]" (rect 0 0 73 12)(font "Arial" ))
-		(text "imediato[31..0]" (rect 134 27 195 39)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 200 64))
-	)
-)
-(symbol
 	(rect 1104 112 1336 224)
 	(text "ula" (rect 5 0 19 12)(font "Arial" ))
 	(text "ula_principal" (rect 8 96 68 108)(font "Arial" ))
@@ -807,6 +785,28 @@ applicable agreement for further details.
 		(output)
 		(text "pc_atual[31..0]" (rect 0 0 73 12)(font "Arial" ))
 		(text "pc_atual[31..0]" (rect 134 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 64))
+	)
+)
+(symbol
+	(rect 744 456 960 536)
+	(text "gerador_imediato" (rect 5 0 88 12)(font "Arial" ))
+	(text "gerador_imediato" (rect 8 64 91 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "instruction[31..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "instruction[31..0]" (rect 21 27 103 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "imediato[31..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "imediato[31..0]" (rect 134 27 195 39)(font "Arial" ))
 		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
 	(drawing

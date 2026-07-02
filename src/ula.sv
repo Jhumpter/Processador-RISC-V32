@@ -17,7 +17,9 @@ always_comb begin
 		4'b0110:
 			resultado = entrada_1 - entrada_2;
 		4'b0111:
-			resultado = (entrada_1 < entrada_2? 32'b1 : 32'b0);
+			resultado = ($signed(entrada_1) < $signed(entrada_2))
+            ? 32'd1
+            : 32'd0;
 		4'b1100:
 			resultado = entrada_1 << entrada_2;
 		4'b0011:

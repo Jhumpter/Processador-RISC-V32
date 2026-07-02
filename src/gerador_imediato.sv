@@ -13,26 +13,38 @@ always_comb begin
 	case (instruction[6:0])
 		//Tipo I
 		7'b0000011,7'b0010011,7'b1100111: begin
-			imediato = instruction[31:20];
+			imediato = {{20{instruction[31]}}, instruction[31:20]};
 		end
 		//Tipo S
 		7'b0100011:begin
-			imediato = (instruction[31:25]<<5) + instruction[11:7];
+			imediato = {{20{instruction[31]}},
+            instruction[31:25],
+            instruction[11:7]};
 		end
 		//Tipo J
 		7'b1101111:begin
-			imediato = ((instruction[31]<<19) + instruction[30:21] + (instruction[20]<<10) + (instruction[19:12]<<11))<<1;
+			imediato = {{11{instruction[31]}},
+            instruction[31],
+            instruction[19:12],
+            instruction[20],
+            instruction[30:21],
+            1'b0};
 		end
 		//Tipo B
 		7'b1100011:begin
-			imediato = ((instruction[31]<<11) + (instruction[30:25]<<4) + instruction[11:8] + (instruction[7]<<10))<<1;
+			imediato = {{19{instruction[31]}},
+            instruction[31],
+            instruction[7],
+            instruction[30:25],
+            instruction[11:8],
+            1'b0};
 		end
 		//Tipo U
 		7'b0110111,7'b0010111:begin
 			imediato = instruction[31:12]<<12;
 		end
 		default: begin
-			imediato = 32'b0;
+			imediato = {instruction[31:12], 12'b0};
 		end
 	endcase
 end
